@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR Real Estate | Corredores Inmobiliarios</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/iconoInmobiliaria.png" type="image/png">
+    
+    <!-- Google Fonts: Montserrat (Títulos) y Lato (Textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Montserrat', 'sans-serif'], // Reemplaza font-serif con Montserrat
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1e2e4d',
+                            gray: '#a6a6a6',
+                            white: '#ffffff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-md py-5" id="navbar">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            
+            <a href="#" class="font-serif text-2xl font-bold tracking-wide text-brand-blue flex items-center gap-2">
+                <i class="fas fa-home text-brand-gray"></i>
+                GR REAL ESTATE
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-base font-medium">
+                <a href="#servicios" class="text-gray-600 hover:text-brand-blue relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Servicios</a>
+                
+                <a href="#propiedades" class="text-gray-600 hover:text-brand-blue relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Propiedades</a>
+                
+                <a href="#contacto" class="text-gray-600 hover:text-brand-blue relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-blue after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Contacto</a>
+                
+                <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20me%20gustaría%20solicitar%20una%20tasación." target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#152036] transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
+                    Tasaciones
+                </a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-brand-blue hover:text-brand-gray focus:outline-none p-2">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl mt-5">
+        <div class="px-4 py-4 space-y-2">
+            <a href="#servicios" class="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-slate-50 hover:text-brand-blue hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Mis Servicios</a>
+            <a href="#propiedades" class="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-slate-50 hover:text-brand-blue hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Propiedades Destacadas</a>
+            <a href="#contacto" class="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-slate-50 hover:text-brand-blue hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Contacto</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-12 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 transform translate-x-20 hidden md:block z-0"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-4 md:mt-0">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
+                <!-- Foto de Perfil / Marca -->
+                <div class="w-48 h-48 md:w-[350px] md:h-[350px] shrink-0">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" alt="GR Real Estate" class="w-full h-full object-cover rounded-full md:rounded-2xl shadow-xl border-4 border-white">
+                </div>
+                
+                <!-- Textos -->
+                <div class="text-center md:text-left flex-1">
+                    <span class="text-brand-gray font-semibold tracking-widest uppercase text-xs mb-3 block">Bienes Raíces & Asesoramiento</span>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-blue font-bold leading-tight mb-4">
+                        Encontramos el lugar <br> <span class="italic font-normal">que llamás hogar.</span>
+                    </h1>
+                    <p class="text-brand-gray mb-8 font-light leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Asesoramiento personalizado en compra, venta y alquiler de propiedades. Tasaciones profesionales y gestión transparente para tu tranquilidad.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20me%20gustaría%20solicitar%20una%20tasación." target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-8 py-3.5 rounded-md font-medium hover:bg-[#152036] transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg text-green-400"></i> Contactar por WhatsApp
+                        </a>
+                        <a href="#propiedades" class="bg-white border border-gray-200 text-brand-blue px-8 py-3.5 rounded-md font-medium hover:bg-slate-50 transition-all text-center">
+                            Ver Propiedades
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 bg-slate-50 border-y border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-blue mb-4">Mis Servicios</h2>
+                <div class="w-12 h-1 bg-brand-gray mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search-dollar text-2xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-blue mb-3">Tasaciones Reales</h3>
+                    <p class="text-brand-gray text-sm font-light">Evaluación precisa del valor de mercado de tu inmueble para asegurar una venta rápida y al precio justo.</p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-2xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-blue mb-3">Venta y Alquiler</h3>
+                    <p class="text-brand-gray text-sm font-light">Gestión integral de tu propiedad. Filtro de inquilinos, contratos actualizados y acompañamiento hasta la firma.</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-signature text-2xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-blue mb-3">Asesoría Legal</h3>
+                    <p class="text-brand-gray text-sm font-light">Resolución de trámites, sucesiones y revisión de documentación para operaciones 100% seguras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Propiedades -->
+    <section id="propiedades" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-blue text-center mb-10">
+                Propiedades Destacadas
+            </h2>
+
+            <!-- Contenedor del Carrusel -->
+            <div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-xl shadow-xl group bg-slate-100">
+                <div id="slider" class="flex transition-transform duration-500 ease-out h-64 md:h-96">
+
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Propiedad 1" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Propiedad 2" class="w-full h-full object-cover">
+                    </div>
+
+                </div>
+
+                <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 text-brand-blue p-2 rounded-full hover:bg-white shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                
+                <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 text-brand-blue p-2 rounded-full hover:bg-white shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="LINK_AL_PERFIL_DE_ZONAPROP" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block bg-brand-blue hover:bg-[#152036] text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    Ver todas mis propiedades en ZonaProp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="bg-brand-blue text-brand-white pt-16 pb-8 mt-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- justify-between empuja los elementos a los extremos opuestos de la línea -->
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12 w-full">
+                
+                <!-- Bloque Izquierda (Alineado al inicio de la línea) -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-sm">
+                    <a href="#" class="font-serif text-2xl font-bold tracking-wide mb-4 flex items-center">
+                        <i class="fas fa-home text-brand-gray mr-2"></i> GR REAL ESTATE
+                    </a>
+                    <p class="text-brand-gray text-sm mb-6">
+                        Matrícula C.U.C.I.C.B.A. 9377. Transparencia, agilidad y profesionalismo en cada operación inmobiliaria.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#2a3f66] flex items-center justify-center text-brand-white hover:bg-brand-gray transition-all shadow-md"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#2a3f66] flex items-center justify-center text-brand-white hover:bg-brand-gray transition-all shadow-md"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Bloque Derecha (Alineado al final de la línea) -->
+                <!-- md:items-end empuja este contenedor contra el borde derecho -->
+                <div class="flex flex-col items-center md:items-end w-full md:w-auto">
+                    <!-- Este div interno mantiene los textos legibles de izquierda a derecha -->
+                    <div class="text-center md:text-left">
+                        <h4 class="font-serif text-lg font-bold mb-6 text-brand-white">Contacto Directo</h4>
+                        <ul class="space-y-4 text-brand-gray text-sm">
+                            <li class="flex items-center justify-center md:justify-start">
+                                <i class="fas fa-phone w-6 text-center"></i> +54 9 11 4092-7481
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start">
+                                <a href="mailto:info@grrealestate.com" class="hover:text-white transition-colors flex items-center">
+                                    <i class="fas fa-envelope w-6 text-center"></i> info@grrealestate.com
+                                </a>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start">
+                                <a href="https://grrealestate.com" target="_blank" class="hover:text-white transition-colors flex items-center">
+                                    <i class="fas fa-globe w-6 text-center"></i> www.grrealestate.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Línea separadora y Copyright -->
+            <div class="text-center border-t border-[#2a3f66] pt-8 text-brand-gray text-xs w-full">
+                <p>&copy; 2026 GR Real Estate. Todos los derechos reservados. | Diseño web por <a href="#" class="text-brand-white hover:underline">Guido Scotti</a></p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp Flotante -->
+    <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20vengo%20desde%20tu%20página%20web" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#1ebd5b] transition-all z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Lógica JS Integrada -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del Menú Móvil
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if(mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Lógica del Carrusel
+            const slider = document.getElementById('slider');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if(slider && prevBtn && nextBtn) {
+                let currentIndex = 0;
+                const totalSlides = slider.children.length;
+
+                const updateSlider = () => {
+                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
