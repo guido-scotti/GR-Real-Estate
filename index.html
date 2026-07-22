@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth scroll-pt-24">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GR Real Estate</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="img/iconoInmobiliaria.png" type="image/png">
-    
-    <!-- Google Fonts: Montserrat (Títulos) y Lato (Textos) -->
+
+    <link rel="icon" href="img/logoGRTransp.svg" type="image/svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -25,7 +21,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Lato', 'sans-serif'],
-                        serif: ['Montserrat', 'sans-serif'], // Reemplaza font-serif con Montserrat
+                        serif: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -57,34 +53,21 @@
 </head>
 <body class="font-sans">
 
-    <!-- Navbar Azul -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-blue shadow-md py-5" id="navbar">
+    <!------------------- NAVBAR ----------------------->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-blue shadow-md py-4 md:py-5" id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                
-                <!-- Logo / Nombre -->
-                <a href="#" class="font-serif text-2xl font-bold tracking-wide text-brand-white flex items-center gap-2">
-                    <i class="fas fa-home text-brand-gray"></i>
-                    GR REAL ESTATE
+                <a href="#" class="flex items-center transition-transform hover:scale-105 duration-300">
+                    <img src="img/logoGR.svg" alt="Graciela Ramos Real Estate" class="h-12 sm:h-14 md:h-16 w-auto">
                 </a>
-                
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 text-base font-medium">
-                    
-                    <!-- Links con efecto hover subrayado animado restaurado (color blanco) -->
-                    <a href="#servicios" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Servicios</a>
-                    
-                    <a href="#propiedades" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Propiedades</a>
-                    
+                    <!--<a href="#servicios" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Servicios</a> -->
+                    <a href="#inmuebles" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Inmuebles</a>
+                    <a href="#tasaciones" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Tasaciones</a>
                     <a href="#contacto" class="text-brand-white hover:text-brand-white transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brand-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Contacto</a>
-                    
-                    <!-- Botón CTA con nuevo hover elegante (Ghost Button) -->
-                    <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20me%20gustaría%20solicitar%20una%20tasación." target="_blank" rel="noopener noreferrer" class="bg-brand-white text-brand-blue border-2 border-brand-white px-6 py-2 rounded-md font-semibold hover:bg-transparent hover:text-brand-white transition-all duration-300 shadow-md flex items-center justify-center gap-2">
-                        Tasaciones
-                    </a>
                 </div>
 
-                <!-- Mobile menu button -->
+    <!------------------- NAVBAR MOBILE ----------------------->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-brand-white hover:text-brand-gray focus:outline-none p-2 transition-colors">
                         <i class="fas fa-bars text-2xl"></i>
@@ -92,55 +75,44 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu (¡Faltaba este bloque!) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full shadow-2xl mt-5 left-0">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full shadow-2xl left-0 top-full">
             <div class="px-4 py-4 space-y-2">
-                <a href="#servicios" class="block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Mis Servicios</a>
-                <a href="#propiedades" class="block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Propiedades Destacadas</a>
-                <a href="#contacto" class="block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Contacto</a>
+                <!--<a href="#servicios" class="mobile-link block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Mis Servicios</a>-->
+                <a href="#inmuebles" class="mobile-link block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Inmuebles</a>
+                <a href="#tasaciones" class="mobile-link block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Tasaciones</a>
+                <a href="#contacto" class="mobile-link block px-4 py-3 text-base font-medium text-brand-blue hover:bg-slate-50 hover:pl-6 transition-all rounded-md border-l-4 border-transparent hover:border-brand-blue">Contacto</a> 
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section con marca -->
-    <section class="min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-12 bg-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 transform translate-x-20 hidden md:block z-0"></div>
-        
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-4 md:mt-0">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
-                <div class="w-48 h-48 md:w-[350px] md:h-[350px] shrink-0">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" alt="GR Real Estate" class="w-full h-full object-cover rounded-full md:rounded-2xl shadow-xl border-4 border-white">
-                </div>
-                
-                <div class="text-center md:text-left flex-1">
-                    <span class="text-brand-gray font-semibold tracking-widest uppercase text-xs mb-3 block">Bienes Raíces & Asesoramiento</span>
-                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-blue font-bold leading-tight mb-4">
-                        GR Real Estate: <br> <span class="italic font-normal">Encontramos tu hogar.</span>
-                    </h1>
-                    <p class="text-brand-gray mb-8 font-light leading-relaxed max-w-lg mx-auto md:mx-0">
-                        Asesoramiento personalizado en compra, venta y alquiler de propiedades. Tasaciones profesionales y gestión transparente para tu tranquilidad.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20me%20gustaría%20solicitar%20una%20tasación." target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-8 py-3.5 rounded-md font-medium hover:bg-[#152036] transition-all shadow-lg flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-lg text-green-400"></i> Contactar por WhatsApp
-                        </a>
-                    </div>
-                </div>
+    <!------------------- HERO/HEADER ----------------------->
+    <section class="h-screen w-full flex items-center justify-center bg-white relative overflow-hidden">
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <div class="absolute -top-10 -bottom-10 -right-20 w-2/3 md:w-1/3 bg-slate-50/80 -skew-x-12 transform"></div>
+                <div class="absolute -top-40 right-[35%] md:right-[30%] w-[1px] h-[200%] bg-[#1e2e4d] opacity-[0.08] transform rotate-12"></div>
+                <div class="absolute -top-40 right-[30%] md:right-[25%] w-2 h-[200%] bg-[#1e2e4d] opacity-[0.05] transform rotate-12"></div>
+                <div class="absolute -top-40 right-[27%] md:right-[22%] w-[1px] h-[200%] bg-[#1e2e4d] opacity-[0.15] transform rotate-12"></div>
+                <div class="absolute -top-40 right-[15%] md:right-[12%] w-[2px] h-[200%] bg-[#1e2e4d] opacity-[0.1] transform rotate-12"></div>
+                <div class="absolute -top-40 right-[8%] md:right-[5%] w-[1px] h-[200%] bg-[#1e2e4d] opacity-[0.06] transform rotate-12"></div>
+                <div class="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-[#1e2e4d] rounded-full opacity-[0.03] blur-3xl"></div>
+                <div class="absolute -top-20 -left-20 w-[400px] h-[400px] bg-[#1e2e4d] rounded-full opacity-[0.02] blur-3xl"></div>
             </div>
-        </div>
-    </section>
+            <div class="relative z-10 w-full max-w-[450px] md:max-w-[650px] lg:max-w-[900px] px-4 md:px-6">
+                <img src="img/GRHero.svg" 
+                    alt="Graciela Ramos Real Estate" 
+                    class="w-full h-auto drop-shadow-xl hover:scale-105 transition-transform duration-700 ease-out">
+            </div>
+        </section>
 
     <!-- Servicios -->
-    <section id="servicios" class="py-20 bg-slate-50 border-y border-gray-200">
+<!--     <section id="servicios" class="py-20 bg-slate-50 border-y border-gray-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-blue mb-4">Mis Servicios</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1e2e4d] mb-4">Mis Servicios</h2>
                 <div class="w-12 h-1 bg-brand-gray mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
                     <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-search-dollar text-2xl text-brand-blue"></i>
@@ -149,7 +121,6 @@
                     <p class="text-brand-gray text-sm font-light">Evaluación precisa del valor de mercado de tu inmueble para asegurar una venta rápida y al precio justo.</p>
                 </div>
 
-                <!-- Servicio 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
                     <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-handshake text-2xl text-brand-blue"></i>
@@ -158,7 +129,6 @@
                     <p class="text-brand-gray text-sm font-light">Gestión integral de tu propiedad. Filtro de inquilinos, contratos actualizados y acompañamiento hasta la firma.</p>
                 </div>
 
-                <!-- Servicio 3 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
                     <div class="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-file-signature text-2xl text-brand-blue"></i>
@@ -169,78 +139,266 @@
             </div>
         </div>
     </section>
+ -->
 
-    <!-- Sección Propiedades -->
-    <section id="propiedades" class="py-16 bg-white">
+    <!------------------- INMUEBLES ----------------------->
+    <section id="inmuebles" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-blue text-center mb-10">
-                Propiedades Destacadas
-            </h2>
-
-            <!-- Contenedor del Carrusel -->
-            <div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-xl shadow-xl group bg-slate-100">
-                <div id="slider" class="flex transition-transform duration-500 ease-out h-64 md:h-96">
-
-                    <!-- Slide 1 -->
-                    <div class="w-full flex-shrink-0 relative">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Propiedad 1" class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="w-full flex-shrink-0 relative">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Propiedad 2" class="w-full h-full object-cover">
-                    </div>
-
-                </div>
-
-                <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 text-brand-blue p-2 rounded-full hover:bg-white shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-                
-                <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 text-brand-blue p-2 rounded-full hover:bg-white shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1e2e4d] mb-4">Propiedades Destacadas</h2>
+                <p class="text-[#7a8a9e] max-w-2xl mx-auto">Conocé nuestras mejores opciones en el mercado.</p>
             </div>
 
-            <div class="mt-12 text-center">
-                <a href="LINK_AL_PERFIL_DE_ZONAPROP" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block bg-brand-blue hover:bg-[#152036] text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    Ver todas mis propiedades en ZonaProp
-                </a>
+            <!------------------- TALCAHUANO 900 ----------------------->
+            <div class="flex flex-wrap justify-center gap-8">
+                <div onclick="abrirModal('modal-talcahuano')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden group carousel-container">
+                        <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                            <img src="img/propiedades/talcahuano900-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 1">
+                            <img src="img/propiedades/talcahuano900-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 2">
+                            <img src="img/propiedades/talcahuano900-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 3">
+                            <img src="img/propiedades/talcahuano900-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 4">
+                            <img src="img/propiedades/talcahuano900-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 5">
+                            <img src="img/propiedades/talcahuano900-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 6">
+                            <img src="img/propiedades/talcahuano900-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Talcahuano 7">
+                        </div>
+
+                        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
+                        
+                        <span class="absolute top-4 left-4 bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">En Venta</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 64.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-4 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Talcahuano 900</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm mt-auto pt-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 1 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 1 Baño</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 26 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------- ALSINA 500 ----------------------->
+                <div onclick="abrirModal('modal-alsina')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden group carousel-container">
+                        <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                            <img src="img/propiedades/alsina500-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 1">
+                            <img src="img/propiedades/alsina500-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 2">
+                            <img src="img/propiedades/alsina500-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 3">
+                            <img src="img/propiedades/alsina500-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 4">
+                            <img src="img/propiedades/alsina500-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 5">
+                            <img src="img/propiedades/alsina500-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 6">
+                            <img src="img/propiedades/alsina500-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 7">
+                            <img src="img/propiedades/alsina500-8.jpg" class="w-full h-full object-cover flex-shrink-0" alt="ALSINA 500 8">
+                        </div>
+
+                        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
+                        
+                        <span class="absolute top-4 left-4 bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">En Venta</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 85.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-4 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Alsina 500</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm mt-auto pt-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 3 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 1 Baño</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 58 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------- ARENALES 1900 ----------------------->
+                <div onclick="abrirModal('modal-arenales')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden group carousel-container">
+                        <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                            <img src="img/propiedades/arenales1900-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 1">
+                            <img src="img/propiedades/arenales1900-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 2">
+                            <img src="img/propiedades/arenales1900-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 3">
+                            <img src="img/propiedades/arenales1900-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 4">
+                            <img src="img/propiedades/arenales1900-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 5">
+                            <img src="img/propiedades/arenales1900-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 6">
+                            <img src="img/propiedades/arenales1900-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 7">
+                            <img src="img/propiedades/arenales1900-8.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Arenales 8">
+                        </div>
+
+                        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
+                        
+                        <span class="absolute top-4 left-4 bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">En Venta</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 65.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-4 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Arenales 1900</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm mt-auto pt-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 1 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 1 Baño</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 27 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------- JM GUTIERREZ 2775 ----------------------->
+                <div onclick="abrirModal('modal-jmgutierrez')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden group carousel-container">
+                        <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                            <img src="img/propiedades/jmgutierrez2775-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 1">
+                            <img src="img/propiedades/jmgutierrez2775-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 2">
+                            <img src="img/propiedades/jmgutierrez2775-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 3">
+                            <img src="img/propiedades/jmgutierrez2775-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 4">
+                            <img src="img/propiedades/jmgutierrez2775-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 5">
+                            <img src="img/propiedades/jmgutierrez2775-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 6">
+                            <img src="img/propiedades/jmgutierrez2775-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 7">
+                            <img src="img/propiedades/jmgutierrez2775-8.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 8">
+                            <img src="img/propiedades/jmgutierrez2775-9.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 9">
+                            <img src="img/propiedades/jmgutierrez2775-10.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 10">
+                            <img src="img/propiedades/jmgutierrez2775-11.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 11">
+                            <img src="img/propiedades/jmgutierrez2775-12.jpg" class="w-full h-full object-cover flex-shrink-0" alt="JM Gutiérrez 12">
+                        </div>
+
+                        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
+                        
+                        <span class="absolute top-4 left-4 bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">En Venta</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 149.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-4 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> JM Gutiérrez 2775</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm mt-auto pt-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 2 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 2 Baños</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 51 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------- GIORDANO BRUNO ----------------------->
+                <div onclick="abrirModal('modal-giordano')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden group carousel-container">
+                        <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                            <img src="img/propiedades/giordanobruno-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 1">
+                            <img src="img/propiedades/giordanobruno-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 2">
+                            <img src="img/propiedades/giordanobruno-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 3">
+                            <img src="img/propiedades/giordanobruno-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 4">
+                            <img src="img/propiedades/giordanobruno-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 5">
+                            <img src="img/propiedades/giordanobruno-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 6">
+                            <img src="img/propiedades/giordanobruno-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Giordano Bruno 7">
+                        </div>
+
+                        <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
+                        
+                        <span class="absolute top-4 left-4 bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">En Venta</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 112.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-4 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Giordano Bruno</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm mt-auto pt-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 2 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 1 Baño</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 50 m²</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contacto -->
+    <!------------------- TASACIONES ----------------------->
+    <section id="tasaciones" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">  
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+                <div class="lg:w-5/12 bg-[#1e2e4d] p-10 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+                    <div class="relative z-10">
+                        <span class="text-brand-gray text-blue-200 font-semibold tracking-widest uppercase text-xs mb-3 block">Servicio Profesional</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">Descubrí el valor real de tu propiedad</h2>
+                        <p class="text-blue-100 mb-8 font-light leading-relaxed">
+                            Realizamos tasaciones objetivas y actualizadas al mercado. Completá el formulario y nos pondremos en contacto con vos a la brevedad para asesorarte.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 text-blue-100">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-home text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium">Análisis exhaustivo del mercado</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-blue-100">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-handshake text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium">Asesoramiento personalizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-7/12 p-10 md:p-12 bg-slate-50">
+                    <h3 class="text-2xl font-bold text-[#1e2e4d] mb-6">Solicitá tu Tasación</h3>
+
+                    <form id="form-tasacion" class="space-y-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre y Apellido *</label>
+                            <input type="text" id="nombre" name="nombre" required 
+                                class="w-full px-4 py-3 rounded-md border border-gray-300 bg-white focus:border-[#1e2e4d] focus:ring-1 focus:ring-[#1e2e4d] outline-none transition-colors" 
+                                placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" required 
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 bg-white focus:border-[#1e2e4d] focus:ring-1 focus:ring-[#1e2e4d] outline-none transition-colors" 
+                                    placeholder="Ej: 11 1234 5678">
+                            </div>
+                            <div>
+                                <label for="mail" class="block text-sm font-medium text-gray-700 mb-1">Mail *</label>
+                                <input type="email" id="mail" name="mail" required 
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 bg-white focus:border-[#1e2e4d] focus:ring-1 focus:ring-[#1e2e4d] outline-none transition-colors" 
+                                    placeholder="Ej: juan@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="comentario" class="block text-sm font-medium text-gray-700 mb-1">Detalles de la Propiedad</label>
+                            <textarea id="comentario" name="comentario" rows="4" 
+                                class="w-full px-4 py-3 rounded-md border border-gray-300 bg-white focus:border-[#1e2e4d] focus:ring-1 focus:ring-[#1e2e4d] outline-none transition-colors resize-none" 
+                                placeholder="Contanos la dirección, cantidad de ambientes, metros cuadrados o cualquier detalle relevante..."></textarea>
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-[#1e2e4d] text-white font-medium py-3.5 rounded-md hover:bg-[#152036] transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane text-sm"></i> Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------- FOOTER ----------------------->
     <footer id="contacto" class="bg-brand-blue text-brand-white pt-16 pb-8 mt-10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- justify-between empuja los elementos a los extremos opuestos de la línea -->
             <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12 w-full">
-                
-                <!-- Bloque Izquierda (Alineado al inicio de la línea) -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-sm">
-                    <a href="#" class="font-serif text-2xl font-bold tracking-wide mb-4 flex items-center">
-                        <i class="fas fa-home text-brand-gray mr-2"></i> GR REAL ESTATE
+                    <a href="#navbar" class="mb-6 flex items-center justify-center md:justify-start transition-opacity hover:opacity-80">
+                        <img src="img/logoGR.svg" alt="Graciela Ramos Real Estate" class="h-24 w-auto">
                     </a>
                     <p class="text-brand-gray text-sm mb-6">
                         Matrícula C.U.C.I.C.B.A. 9377. Transparencia, agilidad y profesionalismo en cada operación inmobiliaria.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-[#2a3f66] flex items-center justify-center text-brand-white hover:bg-brand-gray transition-all shadow-md"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-[#2a3f66] flex items-center justify-center text-brand-white hover:bg-brand-gray transition-all shadow-md"><i class="fab fa-facebook-f"></i></a>
-                    </div>
                 </div>
-                
-                <!-- Bloque Derecha (Alineado al final de la línea) -->
-                <!-- md:items-end empuja este contenedor contra el borde derecho -->
                 <div class="flex flex-col items-center md:items-end w-full md:w-auto">
-                    <!-- Este div interno mantiene los textos legibles de izquierda a derecha -->
                     <div class="text-center md:text-left">
                         <h4 class="font-serif text-lg font-bold mb-6 text-brand-white">Contacto Directo</h4>
                         <ul class="space-y-4 text-brand-gray text-sm">
@@ -249,70 +407,401 @@
                             </li>
                             <li class="flex items-center justify-center md:justify-start">
                                 <a href="mailto:info@grrealestate.com" class="hover:text-white transition-colors flex items-center">
-                                    <i class="fas fa-envelope w-6 text-center"></i> info@grrealestate.com
+                                    <i class="fas fa-envelope w-6 text-center"></i> info@grrealestate.com.ar
                                 </a>
                             </li>
                             <li class="flex items-center justify-center md:justify-start">
                                 <a href="https://grrealestate.com" target="_blank" class="hover:text-white transition-colors flex items-center">
-                                    <i class="fas fa-globe w-6 text-center"></i> www.grrealestate.com
+                                    <i class="fas fa-globe w-6 text-center"></i> www.grrealestate.com.ar
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                
             </div>
-            
-            <!-- Línea separadora y Copyright -->
-            <div class="text-center border-t border-[#2a3f66] pt-8 text-brand-gray text-xs w-full">
+            <div class="text-center border-t border-[#2a3f66] pt-8 text-brand-gray text-xs w-2/3 md:w-full mx-auto">
                 <p>&copy; 2026 GR Real Estate. Todos los derechos reservados. | Diseño web por <a href="#" class="text-brand-white hover:underline">Guido Scotti</a></p>
             </div>
-            
         </div>
     </footer>
 
-    <!-- Botón de WhatsApp Flotante -->
+    <!------------------- WPP FLOTANTE ----------------------->
     <a href="https://wa.me/5491140927481?text=Hola%20GR%20Real%20Estate,%20vengo%20desde%20tu%20página%20web" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#1ebd5b] transition-all z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Lógica JS Integrada -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Lógica del Menú Móvil
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if(mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+    <!------------------- MODAL TALCAHUANO 900 ----------------------->
+    <div id="modal-talcahuano" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-talcahuano')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-y-auto flex flex-col lg:flex-row">
+            <button onclick="cerrarModal('modal-talcahuano')" class="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
 
-            // Lógica del Carrusel
-            const slider = document.getElementById('slider');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            if(slider && prevBtn && nextBtn) {
-                let currentIndex = 0;
-                const totalSlides = slider.children.length;
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img src="img/propiedades/talcahuano900-1.jpg" alt="Talcahuano 900 Foto 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-2.jpg" alt="Talcahuano 900 Foto 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-3.jpg" alt="Talcahuano 900 Foto 3" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-4.jpg" alt="Talcahuano 900 Foto 4" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-5.jpg" alt="Talcahuano 900 Foto 5" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-6.jpg" alt="Talcahuano 900 Foto 6" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/talcahuano900-7.jpg" alt="Talcahuano 900 Foto 7" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
 
-                const updateSlider = () => {
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                };
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10">
+                <div class="mb-2">
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Venta</span>
+                    <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Apto Profesional</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 64.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $150.000</span>
+                </div>
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Talcahuano 900, San Nicolás, Capital Federal</p>
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento próximo a Tribunales</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Muy buen departamento apto profesional, próximo a Av. Santa Fe, Teatro Colón, Av. Corrientes y Tribunales. Muy luminoso.
+                </p>
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 26 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 26 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 1 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 60 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Contrafrente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Orientación</span><span class="font-medium"><i class="fas fa-compass text-[#7a8a9e] w-5"></i> Sur (S)</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
 
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSlider();
-                });
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina independiente</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Aire acondicionado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Acceso movilidad reducida</div>
+                </div>
 
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateSlider();
-                });
-            }
-        });
-    </script>
+                <a href="https://wa.me/5491140927481?text=Hola%20Graciela,%20me%20interesa%20la%20propiedad%20en%20Talcahuano%20900." target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-[#1e2e4d] text-white hover:bg-[#152036] font-medium py-3.5 rounded-md transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Consultar por esta propiedad
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!------------------- MODAL ALSINA 500 ----------------------->
+    <div id="modal-alsina" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-alsina')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-y-auto flex flex-col lg:flex-row">
+            <button onclick="cerrarModal('modal-alsina')" class="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img src="img/propiedades/alsina500-1.jpg" alt="Alsina 500 Foto 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-2.jpg" alt="Alsina 500 Foto 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-3.jpg" alt="Alsina 500 Foto 3" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-4.jpg" alt="Alsina 500 Foto 4" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-5.jpg" alt="Alsina 500 Foto 5" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-6.jpg" alt="Alsina 500 Foto 6" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-7.jpg" alt="Alsina 500 Foto 7" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-8.jpg" alt="Alsina 500 Foto 8" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/alsina500-9.jpg" alt="Alsina 500 Foto 9" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10">
+                <div class="mb-2">
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Venta</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 85.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $320.000</span>
+                </div>
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Alsina 500, Monserrat, Capital Federal</p>
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento en Monserrat</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Excelente ubicación en Alsina al 500, entre Bolívar y Perú, cerca de las avenidas Presidente Julio Roca, Hipólito Yrigoyen, Av. de Mayo, Av. Rivadavia, 
+                    Paseo Colón y Belgrano. Cerca de los subtes línea D, B y D, estación "Bolívar". "Perú" y "Catedral". Departamento de 3 ambientes, al frente con dos 
+                    balcones. Cuenta con living comedor y dos dormitorios al frente, con salida a balcón. Cocina independiente. Baño completo con ventilación al exterior. 
+                    Agua caliente central y la calefacción individual. Encargada con vivienda.
+                </p>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 58 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 54 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 3 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 75 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Frente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Orientación</span><span class="font-medium"><i class="fas fa-compass text-[#7a8a9e] w-5"></i> Sur (S)</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Encargado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Vigilancia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                </div>
+
+                <a href="https://wa.me/5491140927481?text=Hola%20Graciela,%20me%20interesa%20la%20propiedad%20en%20Alsina%20500." target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-[#1e2e4d] text-white hover:bg-[#152036] font-medium py-3.5 rounded-md transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Consultar por esta propiedad
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!------------------- MODAL ARENALES 1900 ----------------------->
+    <div id="modal-arenales" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-arenales')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
+            <button onclick="cerrarModal('modal-arenales')" class="fixed lg:absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img src="img/propiedades/arenales1900-1.jpg" alt="Arenales 1900 Foto 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-2.jpg" alt="Arenales 1900 Foto 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-3.jpg" alt="Arenales 1900 Foto 3" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-4.jpg" alt="Arenales 1900 Foto 4" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-5.jpg" alt="Arenales 1900 Foto 5" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-6.jpg" alt="Arenales 1900 Foto 6" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-7.jpg" alt="Arenales 1900 Foto 7" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/arenales1900-8.jpg" alt="Arenales 1900 Foto 8" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10 lg:overflow-y-auto">
+                <div class="mb-2">
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Venta</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 65.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $160.000</span>
+                </div> 
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Arenales 1900, Recoleta, Capital Federal</p>
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento en Recoleta</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Departamento en venta en Recoleta, a mts. de Av. Santa Fe, Av. Callao. Visitas a partir de julio de 2026. Este funcional ambiente de 27 m², divisible, 
+                    ofrece una excelente oportunidad en una ubicación privilegiada. Cuenta con cocina independiente y living comedor, ideal para una persona o estudiantes. 
+                    El departamento es muy luminoso gracias a su disposición al frente y orientación Oeste. El edificio tiene 8 pisos y 4 departamentos por piso, con ascensor 
+                    y acceso para personas con movilidad reducida. Además, posee aire acondicionado y calefacción. Excelentes opciones de transporte público facilitan el 
+                    acceso a cualquier punto de la ciudad. La zona también cuenta con numerosos parques y espacios verdes, así como una variada oferta gastronómica y cultural.
+                     El edificio tiene encargado y antigüedad de 60 años.
+                </p>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 27 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 27 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 1 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 60 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Frente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Orientación</span><span class="font-medium"><i class="fas fa-compass text-[#7a8a9e] w-5"></i> Oeste (O)</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina independiente</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Aire acondicionado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Encargado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Vigilancia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Acceso movilidad reducida</div>
+                </div>
+
+                <a href="https://wa.me/5491140927481?text=Hola%20Graciela,%20me%20interesa%20la%20propiedad%20en%20Arenales%201900." target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-[#1e2e4d] text-white hover:bg-[#152036] font-medium py-3.5 rounded-md transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Consultar por esta propiedad
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!------------------- MODAL JM GUTIERREZ 2775 ----------------------->
+    <div id="modal-jmgutierrez" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-jmgutierrez')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
+            <button onclick="cerrarModal('modal-jmgutierrez')" class="fixed lg:absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img src="img/propiedades/jmgutierrez2775-1.jpg" alt="JM Gutierrez 2775 Foto 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-2.jpg" alt="JM Gutierrez 2775 Foto 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-3.jpg" alt="JM Gutierrez 2775 Foto 3" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-4.jpg" alt="JM Gutierrez 2775 Foto 4" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-5.jpg" alt="JM Gutierrez 2775 Foto 5" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-6.jpg" alt="JM Gutierrez 2775 Foto 6" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-7.jpg" alt="JM Gutierrez 2775 Foto 7" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-8.jpg" alt="JM Gutierrez 2775 Foto 8" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-9.jpg" alt="JM Gutierrez 2775 Foto 9" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-10.jpg" alt="JM Gutierrez 2775 Foto 10" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-11.jpg" alt="JM Gutierrez 2775 Foto 11" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/jmgutierrez2775-12.jpg" alt="JM Gutierrez 2775 Foto 12" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10 lg:overflow-y-auto">
+                <div class="mb-2">
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Venta</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 149.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $240.000</span>
+                </div>  
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Juan Maria Gutierrez 2775, Recoleta, Capital Federal</p> 
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento a metros de Av. Las Heras</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Hermoso departamento a mts. de Av. Las Heras, Htal. Rivadavia, a metros del Colegio San Agustin, y a pocas cuadras de Av. del Libertador. 
+                    Primer piso contrafrente con amplio patio, super luminoso. Cocina integrada al living. Dormitorio con amplios placares, baño completo con bañera. 
+                    Dos equipos de aire acondicionado frio-calor. El edificio cuenta con gimnasio, sum y piscina. Las medidas son aproximadas y las que surjan del titulo 
+                    de propiedad. Apto credito bancario.
+                </p>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 51 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 35 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 2 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 2 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 10 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Contrafrente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Orientación</span><span class="font-medium"><i class="fas fa-compass text-[#7a8a9e] w-5"></i> Este (E)</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina independiente</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Patio</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Aire acondicionado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> SUM</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Encargado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Vigilancia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Gimnasio</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Pileta</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Solarium</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Internet</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Acceso movilidad reducida</div>
+                </div>
+
+                <a href="https://wa.me/5491140927481?text=Hola%20Graciela,%20me%20interesa%20la%20propiedad%20en%20JM%20Gutierrez%202775." target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-[#1e2e4d] text-white hover:bg-[#152036] font-medium py-3.5 rounded-md transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Consultar por esta propiedad
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!------------------- MODAL GIORDANO BRUNO ----------------------->
+    <div id="modal-giordano" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-giordano')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-y-auto flex flex-col lg:flex-row">
+            <button onclick="cerrarModal('modal-giordano')" class="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img src="img/propiedades/giordanobruno-1.jpg" alt="Giordano Bruno Foto 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-2.jpg" alt="Giordano Bruno Foto 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-3.jpg" alt="Giordano Bruno Foto 3" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-4.jpg" alt="Giordano Bruno Foto 4" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-5.jpg" alt="Giordano Bruno Foto 5" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-6.jpg" alt="Giordano Bruno Foto 6" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="img/propiedades/giordanobruno-7.jpg" alt="Giordano Bruno Foto 7" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10">
+                <div class="mb-2">
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Venta</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 112.000</h3>
+                <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $150.000</span>
+                </div> 
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Giordano Bruno, Caballito, Capital Federal</p>   
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento a metros de Av. Rivadavia</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Impecable semipiso de dos ambientes de tres años de antiguedad, cercano a Av. Rivadavia, subte A y con todos los medios de transporte. 
+                    Se encuentra alquilado actualmente y la venta es con renta. Gran living comedor con salida a balcon corrido y cocina integrada. Aberturas con DVH. 
+                    Dormitorio con placard y baño completo con bañera. Buenas terminaciones. Bajas expensas. Oportunidad de inversion!
+                </p>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 50 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 46 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 2 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 2 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Frente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Orientación</span><span class="font-medium"><i class="fas fa-compass text-[#7a8a9e] w-5"></i> Suroeste (SO)</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina independiente</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Balcón</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                </div>
+
+                <a href="https://wa.me/5491140927481?text=Hola%20Graciela,%20me%20interesa%20la%20propiedad%20en%20Giordano%20Bruno." target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-[#1e2e4d] text-white hover:bg-[#152036] font-medium py-3.5 rounded-md transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Consultar por esta propiedad
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
 </body>
 </html>
