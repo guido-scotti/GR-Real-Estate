@@ -1,6 +1,7 @@
 // Variables globales para el visor de imágenes
 let lightboxImages = [];
 let lightboxCurrentIndex = 0;
+window.isGlobalSwiping = false; // NUEVO: Bandera para proteger el swipe
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // LOGICA DE SLIDER DE IMAGENES
+    // LOGICA DE SLIDER DE IMAGENES (HERO)
     // ==========================================
     const slider = document.getElementById('slider');
     const prevBtn = document.getElementById('prevBtn');
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // LOGICA DE CAROUSEL DE IMAGENES
+    // LOGICA DE CAROUSEL DE IMAGENES (Fichas y Modales)
     // ==========================================
     const carousels = document.querySelectorAll('.carousel-container');
         
@@ -57,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextBtn = carousel.querySelector('.next-btn');
         const prevBtn = carousel.querySelector('.prev-btn');
         let currentIndex = 0;
-        let isSwiping = false; // Bandera para diferenciar swipe de clic
 
         const updateCarousel = () => {
             const width = carousel.getBoundingClientRect().width;
@@ -81,23 +81,25 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('resize', updateCarousel);
         }
 
-        // Lógica Táctil (Swipe)
+        // ==========================================
+        // LÓGICA TÁCTIL (Aplicada al CAROUSEL, no al track)
+        // ==========================================
         let startX = 0;
         
-        track.addEventListener('touchstart', (e) => {
+        carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-            isSwiping = false; // Reiniciamos la bandera al tocar
+            window.isGlobalSwiping = false; // Reiniciamos al tocar
         }, {passive: true});
 
-        track.addEventListener('touchmove', (e) => {
+        carousel.addEventListener('touchmove', (e) => {
             let currentX = e.touches[0].clientX;
-            // Si el dedo se movió más de 10px, es un arrastre, no un clic
+            // Si el dedo se mueve, marcamos que está arrastrando
             if (Math.abs(startX - currentX) > 10) {
-                isSwiping = true;
+                window.isGlobalSwiping = true;
             }
         }, {passive: true});
 
-        track.addEventListener('touchend', (e) => {
+        carousel.addEventListener('touchend', (e) => {
             let endX = e.changedTouches[0].clientX;
             const umbral = 40;
             const diferencia = startX - endX;
@@ -110,11 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 updateCarousel();
             }
+            
+            // Apagamos la bandera con un micro-delay para que frene los clics falsos
+            setTimeout(() => {
+                window.isGlobalSwiping = false;
+            }, 50);
         });
 
-        // Prevenir que se abra el modal si el usuario estaba deslizando la foto
-        track.addEventListener('click', (e) => {
-            if (isSwiping) {
+        // Prevenir que un toque abra el modal externo si estábamos deslizando
+        carousel.addEventListener('click', (e) => {
+            if (window.isGlobalSwiping) {
                 e.stopPropagation();
                 e.preventDefault();
             }
@@ -122,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // EVENTOS TÁCTILES PARA EL LIGHTBOX MÓVIL
+    // LÓGICA TÁCTIL DEL LIGHTBOX (Pantalla completa)
     // ==========================================
     const lightboxTouchArea = document.getElementById('lightbox-touch-area');
     
@@ -151,9 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// FUNCIONES GLOBALES (Modales y Lightbox)
+// FUNCIONES GLOBALES
 // ==========================================
-
 function abrirModal(id) {
     const modal = document.getElementById(id);
     if(!modal) return;
@@ -175,7 +181,14 @@ function cerrarModal(id) {
 }
 
 function abrirLightbox(e, imgElement) {
-    if (window.innerWidth >= 1024) return; // Solo funciona en celulares
+    // BLOQUEO: Si el usuario movió el dedo (swipe), NO abrimos la foto.
+    if (window.isGlobalSwiping) {
+        e.stopPropagation();
+        e.preventDefault();
+        return;
+    }
+
+    if (window.innerWidth >= 1024) return; // Exclusivo mobile
     e.stopPropagation();
 
     const track = imgElement.closest('.carousel-track');
@@ -183,7 +196,6 @@ function abrirLightbox(e, imgElement) {
 
     const imgs = Array.from(track.querySelectorAll('img'));
     
-    // Guardamos todas las fotos del carrusel actual
     lightboxImages = imgs.map(img => img.src);
     lightboxCurrentIndex = imgs.indexOf(imgElement);
 
