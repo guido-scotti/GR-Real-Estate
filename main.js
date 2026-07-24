@@ -155,6 +155,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    emailjs.init("CdLb5SWx4R2_52mgO"); 
+
+    const formTasacion = document.getElementById('form-tasacion');
+
+    if(formTasacion) {
+        formTasacion.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btnSubmit = this.querySelector('button[type="submit"]');
+            const textoOriginal = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btnSubmit.disabled = true; 
+
+            const serviceID = 'service_a9snkcm'; 
+            const templateID = 'template_2j078qk';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btnSubmit.innerHTML = '<i class="fas fa-check text-green-400"></i> ¡Enviado con éxito!';
+                    this.reset();
+
+                    setTimeout(() => {
+                        btnSubmit.innerHTML = textoOriginal;
+                        btnSubmit.disabled = false;
+                    }, 3000);
+                })
+                .catch((error) => {
+                    console.error('Error al enviar:', error);
+                    btnSubmit.innerHTML = '<i class="fas fa-times text-red-400"></i> Error al enviar';
+                    
+                    setTimeout(() => {
+                        btnSubmit.innerHTML = textoOriginal;
+                        btnSubmit.disabled = false;
+                    }, 3000);
+                });
+        });
+    }
+
 });
 
 // ==========================================
