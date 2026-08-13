@@ -85,9 +85,10 @@
         </div>
     </nav>
 
-    <!------------------- HERO/HEADER ----------------------->
-    <section class="h-screen w-full flex items-center justify-center bg-white relative overflow-hidden">
+<!------------------- HERO / PORTADA ----------------------->
+    <section class="min-h-screen w-full flex items-center justify-center bg-white relative overflow-hidden pt-24 pb-16">
         
+        <!-- Fondo Abstracto (Intacto) -->
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <div class="absolute -top-10 -bottom-10 -right-20 w-2/3 md:w-1/3 bg-slate-50/80 -skew-x-12 transform"></div>
             <div class="absolute -top-40 right-[35%] md:right-[30%] w-[1px] h-[200%] bg-[#1e2e4d] opacity-[0.08] transform rotate-12"></div>
@@ -99,29 +100,47 @@
             <div class="absolute -top-20 -left-20 w-[400px] h-[400px] bg-[#1e2e4d] rounded-full opacity-[0.02] blur-3xl"></div>
         </div>
 
-        <div class="relative z-10 w-full max-w-4xl px-4 md:px-6 flex flex-col items-center text-center mt-16">
-            <img src="img/fotoGraciela.png" 
-                 alt="Graciela Ramos" 
-                 class="w-[240px] h-[256px] object-cover rounded-2xl shadow-2xl mb-8 border-4 border-white transform hover:scale-105 transition-transform duration-500">
+        <!-- Contenido Central -->
+        <div class="relative z-10 w-full px-4 md:px-8 flex flex-col items-center">
+            
+            <!-- Logo Centrado Superior (Más grande) -->
+            <img src="img/logoHeroGR.png" 
+                 alt="Graciela Ramos Real Estate" 
+                 class="w-full max-w-[100px] md:max-w-[300px] lg:max-w-[500px] h-auto drop-shadow-xl mb-16 md:mb-20 transform hover:scale-105 transition-transform duration-700 ease-out">
+            
+            <!-- Contenedor 2 Columnas Centrado -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-4xl mx-auto">
+                
+                <!-- Columna Izquierda: Textos y Botones -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-md">
+                    <h1 class="text-3xl md:text-4xl font-bold text-[#1e2e4d] mb-1 tracking-tight">
+                        Graciela Ramos
+                    </h1>
+                    <h2 class="text-xs md:text-sm text-[#7a8a9e] font-bold tracking-widest uppercase mb-4">
+                        Servicios Inmobiliarios
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-base mb-8 leading-relaxed">
+                        Más de 30 años generando oportunidades de negocios inmobiliarios con transparencia, profesionalidad y seguridad.
+                    </p>
+                    
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full">
+                        <a href="#propiedades" class="w-full sm:w-auto bg-[#1e2e4d] text-white font-medium py-3 px-6 rounded-md hover:bg-[#152036] transition-all shadow-lg text-sm flex items-center justify-center">
+                            Conocé nuestras propiedades
+                        </a>
+                        <a href="#tasaciones" class="w-full sm:w-auto bg-white text-[#1e2e4d] border-2 border-[#1e2e4d] font-medium py-2.5 px-6 rounded-md hover:bg-gray-50 transition-all shadow-sm text-sm flex items-center justify-center">
+                            Solicitá una tasación
+                        </a>
+                    </div>
+                </div>
 
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1e2e4d] mb-2 tracking-tight">
-                Graciela Ramos
-            </h1>
-            <h2 class="text-sm md:text-base text-[#7a8a9e] font-bold tracking-widest uppercase mb-6">
-                Servicios Inmobiliarios
-            </h2>
-
-            <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                Más de 30 años generando oportunidades de negocios inmobiliarios con transparencia, profesionalidad y seguridad.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <a href="#propiedades" class="w-full sm:w-auto bg-[#1e2e4d] text-white font-medium py-3.5 px-8 rounded-md hover:bg-[#152036] transition-all shadow-lg flex items-center justify-center">
-                    Conocé nuestras propiedades
-                </a>
-                <a href="#tasaciones" class="w-full sm:w-auto bg-white text-[#1e2e4d] border-2 border-[#1e2e4d] font-medium py-3 px-8 rounded-md hover:bg-gray-50 transition-all shadow-sm flex items-center justify-center">
-                    Solicitá una tasación
-                </a>
+                <!-- Columna Derecha: Foto de Graciela (Tamaño fijo para que no se estire) -->
+                <div class="flex-shrink-0">
+                    <img src="img/fotoGraciela.png" 
+                         alt="Graciela Ramos" 
+                         class="w-[200px] h-[213px] md:w-[240px] md:h-[256px] object-cover rounded-2xl shadow-xl transform hover:-translate-y-1 transition-transform duration-500">
+                </div>
+                
             </div>
         </div>
     </section>
@@ -141,17 +160,33 @@
                     <div class="relative h-64 overflow-hidden group carousel-container">
                         <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
                             <!-- Reemplazar src cuando tengas las imágenes -->
-                            <img src="img/propiedades/torrelasplazas-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 1">
-                            <img src="img/propiedades/torrelasplazas-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 2">
-                            <img src="img/propiedades/torrelasplazas-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 3">
+                            <img src="img/propiedades/torre-15.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 15">
+                            <img src="img/propiedades/torre-6.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 6">
+                            <img src="img/propiedades/torre-7.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 7">
+                            <img src="img/propiedades/torre-9.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 9">
+                            <img src="img/propiedades/torre-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Torre Las Plazas 5">
                         </div>
                         <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
                         <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
 
-                        <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">Reservado</span>
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">Reservado</span>
+                        </div>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <p class="text-[#7a8a9e] text-sm mb-2 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Torre Las Plazas</p>
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">ARS 2.000.000</h3>
+                        </div>
+                        <p class="text-[#7a8a9e] text-sm mb-2 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Torres Las Plazas (Palermo Chico)</p>
+                        
+                        <!-- Mini descripción adaptada -->
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Impecable departamento de 3 ambientes al frente en torre de categoría. Destaca por su luminosidad, balcón corrido y excelente ubicación.</p>
+                        
+                        <div class="flex items-center justify-between text-gray-600 text-sm py-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 3 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 1 Baño</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 70 m²</span>
+                        </div>
                         <div class="mt-auto pt-2">
                             <span class="w-full bg-gray-50 text-[#1e2e4d] border border-gray-200 font-medium py-2.5 rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 text-sm">
                                 Ver propiedad <i class="fas fa-arrow-right text-xs"></i>
@@ -164,10 +199,11 @@
                 <div onclick="abrirModal('modal-ayacucho')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
                     <div class="relative h-64 overflow-hidden group carousel-container">
                         <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
-                            <!-- Reemplazar src cuando tengas las imágenes -->
-                            <img src="img/propiedades/ayacucho-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 1">
+                            <img src="img/propiedades/ayacucho-12.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 12">
                             <img src="img/propiedades/ayacucho-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 2">
                             <img src="img/propiedades/ayacucho-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 3">
+                            <img src="img/propiedades/ayacucho-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 1">
+                            <img src="img/propiedades/ayacucho-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Ayacucho 4">
                         </div>
                         <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
                         <button class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-md"><i class="fas fa-chevron-right text-sm"></i></button>
@@ -175,7 +211,16 @@
                         <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wide shadow-sm">Reservado</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-2xl font-bold text-[#1e2e4d]">USD 259.000</h3>
+                        </div>
                         <p class="text-[#7a8a9e] text-sm mb-2 font-medium"><i class="fas fa-map-marker-alt mr-1.5"></i> Ayacucho</p>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Departamento refaccionado a nuevo, destacado por sus amplios ambientes luminosos y un exclusivo patio de 50 m² en una ubicación inmejorable.</p>
+                        <div class="flex items-center justify-between text-gray-600 text-sm py-4 border-t border-gray-100">
+                            <span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] mr-1.5"></i> 3 Amb</span>
+                            <span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] mr-1.5"></i> 2 Baños</span>
+                            <span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] mr-1.5"></i> 130 m²</span>
+                        </div>
                         <div class="mt-auto pt-2">
                             <span class="w-full bg-gray-50 text-[#1e2e4d] border border-gray-200 font-medium py-2.5 rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 text-sm">
                                 Ver propiedad <i class="fas fa-arrow-right text-xs"></i>
@@ -286,9 +331,9 @@
                 <div onclick="abrirModal('modal-alsina')" class="w-full md:w-[calc(50%-1rem)] bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
                     <div class="relative h-64 overflow-hidden group carousel-container">
                         <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
-                            <img src="img/propiedades/alsina500-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 1">
+                            <img src="img/propiedades/alsina500-5.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 5">
                             <img src="img/propiedades/alsina500-2.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 2">
-                            <img src="img/propiedades/alsina500-3.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 3">
+                            <img src="img/propiedades/alsina500-1.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 1">
                             <img src="img/propiedades/alsina500-4.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Alsina 4">
                         </div>
                         <button class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-md"><i class="fas fa-chevron-left text-sm"></i></button>
@@ -509,6 +554,170 @@
     <a href="https://wa.me/5491140927481?text=Hola%2C%20Graciela.%20Visit%C3%A9%20tu%20sitio%20web%20y%20quisiera%20realizar%20una%20consulta%20inmobiliaria." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#1ebd5b] transition-all z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!------------------- MODAL TORRES LAS PLAZAS ----------------------->
+    <div id="modal-torre-las-plazas" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-torre-las-plazas')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] lg:h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden">
+            <button onclick="cerrarModal('modal-torre-las-plazas')" class="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="w-full lg:w-1/2 h-72 lg:h-[90vh] relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-15.jpg" alt="Torres Las Plazas Foto 15" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-2.jpg" alt="Torres Las Plazas Foto 2" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-3.jpg" alt="Torres Las Plazas Foto 3" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-4.jpg" alt="Torres Las Plazas Foto 4" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-5.jpg" alt="Torres Las Plazas Foto 5" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-6.jpg" alt="Torres Las Plazas Foto 6" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-7.jpg" alt="Torres Las Plazas Foto 7" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-8.jpg" alt="Torres Las Plazas Foto 8" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-9.jpg" alt="Torres Las Plazas Foto 9" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-10.jpg" alt="Torres Las Plazas Foto 10" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-11.jpg" alt="Torres Las Plazas Foto 11" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-12.jpg" alt="Torres Las Plazas Foto 12" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-13.jpg" alt="Torres Las Plazas Foto 13" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-14.jpg" alt="Torres Las Plazas Foto 14" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/torre-1.jpg" alt="Torres Las Plazas Foto 1" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+            <div class="w-full lg:w-1/2 p-6 md:p-8 flex flex-col bg-white relative z-10 lg:overflow-y-auto">
+                <div class="mb-2">
+                    <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Reservado</span>
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Alquiler</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">ARS 2.000.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $360.000</span>
+                </div>
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Torres Las Plazas, Palermo Chico, Capital Federal</p>
+                
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento con 2 Dorm. en Alquiler</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Impecable departamento en torre de categoría, a una cuadra de Av. del Libertador, cercano a Plaza Alemania y Av. Las Heras, con excelente ubicación. Living comedor con salida a balcón corrido, dormitorio principal con vestidor y segundo dormitorio con placard. Cocina con lavadero incorporado. Agua caliente por caldera individual y aire acondicionado por ductos. Baño completo. Se alquila sin muebles. El edificio cuenta con vigilancia 24 hs, piscina, solarium, gimnasio y laundry. Contrato 24 meses con ajuste trimestral por IPC. No acepta mascotas. Requisitos: garante propietario de CABA e ingresos demostrables. Visitas a partir del 15/1/26.
+                </p>
+                
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 70 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 67 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Semicub.</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 3 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 3 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Dormitorios</span><span class="font-medium"><i class="fas fa-bed text-[#7a8a9e] w-5"></i> 2 Dorm.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 25 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Frente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Balcón corrido</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina con lavadero</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Vestidor y placard</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Aire acond. por ductos</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción por caldera</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Piscina y Solarium</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Gimnasio y Laundry</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Vigilancia 24 hs</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Internet / Wifi</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Acceso mov. reducida</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------- MODAL AYACUCHO ----------------------->
+    <div id="modal-ayacucho" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#1e2e4d]/80 backdrop-blur-sm" onclick="cerrarModal('modal-ayacucho')"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl max-h-[90vh] lg:h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden">
+            <button onclick="cerrarModal('modal-ayacucho')" class="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="w-full lg:w-1/2 h-72 lg:h-full relative bg-gray-100 flex-shrink-0 carousel-container group overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out h-full carousel-track">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-12.jpg" alt="Ayacucho Foto 12" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-2.jpg" alt="Ayacucho Foto 2" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-3.jpg" alt="Ayacucho Foto 3" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-4.jpg" alt="Ayacucho Foto 4" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-5.jpg" alt="Ayacucho Foto 5" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-6.jpg" alt="Ayacucho Foto 6" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-7.jpg" alt="Ayacucho Foto 7" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-8.jpg" alt="Ayacucho Foto 8" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-9.jpg" alt="Ayacucho Foto 9" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-10.jpg" alt="Ayacucho Foto 10" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-11.jpg" alt="Ayacucho Foto 11" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-16.jpg" alt="Ayacucho Foto 16" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-13.jpg" alt="Ayacucho Foto 13" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-14.jpg" alt="Ayacucho Foto 14" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-1.jpg" alt="Ayacucho Foto 1" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-15.jpg" alt="Ayacucho Foto 15" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-17.jpg" alt="Ayacucho Foto 17" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                    <img onclick="abrirLightbox(event, this)" src="img/propiedades/ayacucho-18.jpg" alt="Ayacucho Foto 18" class="w-full h-full object-cover flex-shrink-0 cursor-pointer lg:cursor-default">
+                </div>
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity prev-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 hover:bg-white text-[#1e2e4d] w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity next-btn shadow-lg z-10">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="w-full lg:w-1/2 flex-1 p-6 md:p-8 flex flex-col bg-white relative z-10 overflow-y-auto">
+                <div class="mb-2">
+                    <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide mr-2">Reservado</span>
+                    <span class="bg-[#1e2e4d] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Venta</span>
+                </div>
+                <div class="flex items-end gap-3 mb-2">
+                    <h3 class="text-3xl font-bold text-[#1e2e4d]">USD 259.000</h3>
+                    <span class="text-sm text-gray-500 font-medium mb-1">Expensas: $240.000</span>
+                </div>
+                <p class="text-[#7a8a9e] font-medium mb-6"><i class="fas fa-map-marker-alt mr-1.5"></i> Ayacucho, Recoleta, Capital Federal</p>
+                
+                <h4 class="font-bold text-[#1e2e4d] mb-2 text-lg">Departamento en Venta 3 Ambientes con Patio</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Hermoso departamento de 3 ambientes con patio de 50 m², a metros de Av. Santa Fe, Av. Callao y cercano a Plaza Vicente Lopez. Refaccionado a nuevo hace 3 años. Gran living comedor con pisos de roble de eslavonia y ventanales con salida a patio con mucho sol. Dos dormitorios con placares hechos a nuevo. Cocina comedor diario, con espacio para lavarropas y lavavajillas con mesadas de mármol y buen espacio de guardado. Baño completo y toilette. Baulera propia del depto. Calefacción por losa radiante central.
+                </p>
+                
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Características Principales</h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2 text-sm text-gray-700 mb-6">
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Total</span><span class="font-medium"><i class="fas fa-ruler-combined text-[#7a8a9e] w-5"></i> 130 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Cubierta</span><span class="font-medium"><i class="fas fa-ruler text-[#7a8a9e] w-5"></i> 80 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Sup. Patio</span><span class="font-medium"><i class="fas fa-tree text-[#7a8a9e] w-5"></i> 50 m²</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Ambientes</span><span class="font-medium"><i class="fas fa-door-open text-[#7a8a9e] w-5"></i> 3 Amb.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Dormitorios</span><span class="font-medium"><i class="fas fa-bed text-[#7a8a9e] w-5"></i> 2 Dorm.</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Baños</span><span class="font-medium"><i class="fas fa-bath text-[#7a8a9e] w-5"></i> 1 Baño</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Toilettes</span><span class="font-medium"><i class="fas fa-toilet text-[#7a8a9e] w-5"></i> 1 Toilette</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Antigüedad</span><span class="font-medium"><i class="fas fa-calendar-alt text-[#7a8a9e] w-5"></i> 55 años</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Disposición</span><span class="font-medium"><i class="fas fa-building text-[#7a8a9e] w-5"></i> Contrafrente</span></div>
+                    <div class="flex flex-col"><span class="text-gray-400 text-xs">Luminosidad</span><span class="font-medium"><i class="fas fa-sun text-[#7a8a9e] w-5"></i> Muy luminoso</span></div>
+                </div>
+
+                <h4 class="text-md font-bold text-[#1e2e4d] border-b pb-2 mb-4">Comodidades y Extras</h4>
+                <div class="grid grid-cols-2 gap-y-3 text-sm text-gray-700 pb-4">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Apto crédito</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Gran patio soleado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Pisos roble eslavonia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cocina comedor diario</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Living comedor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Baulera propia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Calefacción losa radiante</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Aire acondicionado</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Encargado / Vigilancia</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ascensor</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Acceso mov. reducida</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!------------------- MODAL TALCAHUANO 900 ----------------------->
     <div id="modal-talcahuano" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300">
