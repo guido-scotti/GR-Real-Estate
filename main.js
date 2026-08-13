@@ -88,12 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-            window.isGlobalSwiping = false; // Reiniciamos al tocar
+            window.isGlobalSwiping = false; 
         }, {passive: true});
 
         carousel.addEventListener('touchmove', (e) => {
             let currentX = e.touches[0].clientX;
-            // Si el dedo se mueve, marcamos que está arrastrando
             if (Math.abs(startX - currentX) > 10) {
                 window.isGlobalSwiping = true;
             }
@@ -112,14 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 updateCarousel();
             }
-            
-            // Apagamos la bandera con un micro-delay para que frene los clics falsos
+
             setTimeout(() => {
                 window.isGlobalSwiping = false;
             }, 50);
         });
 
-        // Prevenir que un toque abra el modal externo si estábamos deslizando
         carousel.addEventListener('click', (e) => {
             if (window.isGlobalSwiping) {
                 e.stopPropagation();
@@ -159,35 +156,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formTasacion = document.getElementById('form-tasacion');
 
-    if(formTasacion) {
-        formTasacion.addEventListener('submit', function(e) {
-            e.preventDefault();
+        if(formTasacion) {
+            formTasacion.addEventListener('submit', function(e) {
+                e.preventDefault(); 
 
-            const btnSubmit = this.querySelector('button[type="submit"]');
-            const textoOriginal = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-            btnSubmit.disabled = true; 
+                const btnSubmit = this.querySelector('button[type="submit"]');
+                const textoOriginal = btnSubmit.innerHTML;
+                
+                btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                btnSubmit.disabled = true;
 
             const serviceID = 'service_a9snkcm'; 
             const templateID = 'template_2j078qk';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
-                    btnSubmit.innerHTML = '<i class="fas fa-check text-green-400"></i> ¡Enviado con éxito!';
+                    btnSubmit.innerHTML = '<i class="fas fa-check"></i> ¡Enviado con éxito!';
+                    btnSubmit.classList.add('bg-green-500', 'hover:bg-green-600');
+                    btnSubmit.classList.remove('bg-[#1e2e4d]', 'hover:bg-[#152036]');
+
+                    const mensajeExito = document.createElement('div');
+                    mensajeExito.id = 'mensaje-exito';
+                    mensajeExito.className = 'mt-6 p-4 bg-green-50 border border-green-200 text-green-800 rounded-md text-sm text-center font-medium shadow-sm transition-opacity duration-500 opacity-0';
+                    mensajeExito.innerHTML = 'Gracias por contactarte con Graciela Ramos. Recibimos tu solicitud y nos comunicaremos con vos a la brevedad.';
+
+                    const msjPrevio = document.getElementById('mensaje-exito');
+                    if(msjPrevio) msjPrevio.remove();
+
+                    formTasacion.appendChild(mensajeExito);
+                    setTimeout(() => mensajeExito.classList.remove('opacity-0'), 10);
+
                     this.reset();
 
                     setTimeout(() => {
                         btnSubmit.innerHTML = textoOriginal;
                         btnSubmit.disabled = false;
-                    }, 3000);
+                        btnSubmit.classList.remove('bg-green-500', 'hover:bg-green-600');
+                        btnSubmit.classList.add('bg-[#1e2e4d]', 'hover:bg-[#152036]');
+
+                        mensajeExito.classList.add('opacity-0');
+                        setTimeout(() => mensajeExito.remove(), 500);
+                    }, 6000);
                 })
                 .catch((error) => {
                     console.error('Error al enviar:', error);
-                    btnSubmit.innerHTML = '<i class="fas fa-times text-red-400"></i> Error al enviar';
+                    btnSubmit.innerHTML = '<i class="fas fa-times"></i> Error al enviar';
+                    btnSubmit.classList.add('bg-red-500', 'hover:bg-red-600');
+                    btnSubmit.classList.remove('bg-[#1e2e4d]', 'hover:bg-[#152036]');
                     
                     setTimeout(() => {
                         btnSubmit.innerHTML = textoOriginal;
                         btnSubmit.disabled = false;
+                        btnSubmit.classList.remove('bg-red-500', 'hover:bg-red-600');
+                        btnSubmit.classList.add('bg-[#1e2e4d]', 'hover:bg-[#152036]');
                     }, 3000);
                 });
         });
