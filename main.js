@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSlides = slider.children.length;
 
         const updateSlider = () => {
+            // CORRECCIÓN: Se agregó el asterisco de multiplicación (*)
             slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         };
 
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updateCarousel = () => {
             const width = carousel.getBoundingClientRect().width;
+            // CORRECCIÓN: Se agregó el asterisco de multiplicación (*)
             track.style.transform = `translateX(-${currentIndex * width}px)`;
         };
 
@@ -129,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // LÓGICA TÁCTIL DEL LIGHTBOX (Pantalla completa)
     // ==========================================
     const lightboxTouchArea = document.getElementById('lightbox-touch-area');
-    
+
     if(lightboxTouchArea) {
         let lbStartX = 0;
         
